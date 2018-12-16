@@ -48,5 +48,22 @@ namespace Mechanical.Timestep
         }
 
         #endregion
+
+        #region Lerp
+
+        /// <summary>
+        /// Basic linear interpolation.
+        /// </summary>
+        /// <param name="oldValue">The old value.</param>
+        /// <param name="newValue">The new value.</param>
+        /// <param name="alpha">The point between the old and new values to interpolate. MUST be between <c>0</c> and <c>1</c>.</param>
+        /// <returns>The interpolated value.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Lerp( double oldValue, double newValue, double alpha )
+        {
+            return oldValue * (1d - alpha) + newValue * alpha;
+        }
+
+        #endregion
     }
 }

@@ -32,5 +32,21 @@ namespace Mechanical.Timestep.Tests
             Assert.AreEqual(60, position);
             Assert.AreEqual(30, velocity);
         }
+
+        [Test]
+        public static void Lerp()
+        {
+            var value = TimestepMath.Lerp(3, 5, alpha: 0);
+            Assert.AreEqual(3, value);
+
+            value = TimestepMath.Lerp(3, 5, alpha: 1);
+            Assert.AreEqual(5, value);
+
+            value = TimestepMath.Lerp(3, 5, alpha: 0.5);
+            Assert.AreEqual(4, value);
+
+            value = TimestepMath.Lerp(3, 5, alpha: 0.1);
+            Assert.AreEqual(3.2, value);
+        }
     }
 }
